@@ -8,3 +8,10 @@ O sistema deve ser descrito inicialmente por um resumo simples, como apresentado
 - (CHECK) Os dados para criação de novos objetos devem ser solicitados do usuário; 
 - (CHECK) Crie três métodos para cada classe. Estes métodos não devem ser get e set!
 - (CHECK) Ao menos uma das classes deve possuir 3 construtores.
+
+## Preview
+![Preview](DiagramaDeClasses.png)
+
+## Linguagens e Ferramentas Utilizadas
+![icon](https://github.com/Maxsuel-Santos/Maxsuel-Santos/raw/main/_GitHub/img/java-icon.svg)
+![icon](https://github.com/Maxsuel-Santos/Maxsuel-Santos/raw/main/_GitHub/img/figma-icon.svg)
