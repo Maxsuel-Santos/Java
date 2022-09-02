@@ -1,11 +1,18 @@
-public class Academia extends Endereco{
+public class Academia {
+    private Endereco endereco;
 
     public Academia(String cep, String cidade, String estado, String bairro, String rua, String numero, String complemento) {
-        super(cep, cidade, estado, bairro, rua, numero, complemento);
+        endereco.cep = cep;
+        endereco.cidade = cidade;
+        endereco.estado = estado;
+        endereco.bairro = bairro;
+        endereco.rua = rua;
+        endereco.numero = numero;
+        endereco.complemento = complemento;
     }
 
     public String EnderecoCompletoAcademia() {
-        return "CEP: " + this.cep + "\nCidade: " + this.cidade + "\nEstado: " + this.estado + "\nBairro: " + this.bairro + "\nRua: " + this.rua + "\nComplemento: " + this.complemento + "\nNúmero: " + this.numero;
+        return "CEP: " + endereco.cep + "\nCidade: " + endereco.cidade + "\nEstado: " + endereco.estado + "\nBairro: " + endereco.bairro + "\nRua: " + endereco.rua + "\nComplemento: " + endereco.complemento + "\nNúmero: " + endereco.numero;
     }
 
 }

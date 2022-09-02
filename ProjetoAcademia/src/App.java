@@ -1,12 +1,30 @@
+// Crie uma conta no stackoverflow e tente resolver o porblema dos acentos no scanner pra exibir. Dê o link do código no github
+
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-public final class App {   
+public final class App {  
+    // Método de linha, apenas visual. 
     public static void line() {
         System.out.print("=====================================================================\n");
     }
+
+    // Verifica se o usuário deixou vazio um campo, ou seja, sem preencher.
+    public static String estaVazio(String texto, String campo) throws InterruptedException {
+        Scanner scan = new Scanner(System.in, "UTF-8"); 
+        while(texto.isEmpty()) {
+            line();
+            System.err.print("VOCÊ NÃO PREENCHEU O CAMPO!\n");
+            line();
+            Thread.sleep(2000);
+            System.out.print("Digite o " + campo + " de novo: ");
+            texto = scan.nextLine().trim();
+        }
+        return texto;
+    }
+
     public static void main(String[] args) throws Exception {  
-        Scanner scan = new Scanner(System.in, "UTF8"); 
+        Scanner scan = new Scanner(System.in, "UTF-8"); 
         Aluno[] listaAlunos = new Aluno[99]; // Capacidade de 100 cadastro de alunos (0-99) 
         Aluno aluno = new Aluno();
 
@@ -35,17 +53,31 @@ public final class App {
 
                     System.out.print("Nome do aluno(a): ");
                     String nome = scan.nextLine().trim();
+                    if (nome.isEmpty()) nome = estaVazio(nome, "nome");
                     line();
+
                     System.out.print("Sobrenome do aluno(a): ");
                     String sobrenome = scan.nextLine().trim();
+                    if (sobrenome.isEmpty()) sobrenome = estaVazio(sobrenome, "sobrenome");
                     line();
+
                     System.out.print("Idade do aluno(a): ");
                     int idade = scan.nextInt();
                     line();
+
                     scan.nextLine(); // Limpa o buffer do teclado
                     System.out.print("CPF: ");
                     String cpf = scan.nextLine().trim();
+                    // Validação de CPF
+                    while(cpf.length() != 11) {
+                        line();
+                        System.err.print("CPF INVÁLIDO!\n");
+                        line();
+                        System.out.print("CPF: ");
+                        cpf = scan.nextLine().trim();
+                    }
                     line();
+
                     System.out.print("Mensalidade:\n[ 1 ] - Civil Marombinha (3 dias) - R$ 60,00\n[ 2 ] - Padawan Maromba (5 dias) - R$ 80,00\n[ 3 ] - Mestre Jedi Marombão (7 dias) - R$ 100,00\n");
                     System.out.print("Opção: ");
                     int opcaoMensalidade = scan.nextInt();
@@ -77,24 +109,44 @@ public final class App {
 
                     System.out.print("CEP: ");
                     String cep = scan.nextLine().trim();
+                    // Validação de CEP
+                    while(cep.length() != 8) {
+                        line();
+                        System.err.print("CEP INVÁLIDO!\n");
+                        line();
+                        System.out.print("CEP: ");
+                        cep = scan.nextLine().trim();
+                    }
                     line();
+
                     System.out.print("Cidade: ");
                     String cidade = scan.nextLine().trim();
+                    if (cidade.isEmpty()) cidade = estaVazio(cidade, "cidade");
                     line();
+
                     System.out.print("Estado: ");
                     String estado = scan.nextLine().trim();
+                    if (estado.isEmpty()) estado = estaVazio(estado, "estado");
                     line();
+
                     System.out.print("Bairro: ");
                     String bairro = scan.nextLine().trim();
+                    if (bairro.isEmpty()) bairro = estaVazio(bairro, "bairro");
                     line();
+
                     System.out.print("Rua: ");
                     String rua = scan.nextLine().trim(); 
+                    if (rua.isEmpty()) rua = estaVazio(rua, "rua");
                     line();
+
                     System.out.print("Número: "); 
                     String numero = scan.nextLine().trim();
+                    if (numero.isEmpty()) numero = estaVazio(numero, "número");
                     line();
+
                     System.out.print("Complemento: ");
                     String complemento = scan.nextLine().trim();
+                    if (complemento.isEmpty()) complemento = estaVazio(complemento, "complemento");
                     line();
 
                     System.out.print("CADASTRO REALIZADO!\n");
