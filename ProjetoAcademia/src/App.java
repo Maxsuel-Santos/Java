@@ -1,5 +1,3 @@
-// Crie uma conta no stackoverflow e tente resolver o porblema dos acentos no scanner pra exibir. Dê o link do código no github
-
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
