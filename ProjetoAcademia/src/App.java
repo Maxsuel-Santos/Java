@@ -236,8 +236,10 @@ public final class App {
                     break;
             
                     case 4:
-                    // Endereço da Academia
-                    Academia marombas = new Academia("46165000", "Dom Basílio", "Bahia", "Centro", "Rua dos Marombas", "713", "Edifício");
+                    // Endereço da Academia. Cria uma instância da classe Endereco.
+                    Endereco enderecoAcademia = new Endereco("46165000", "Dom Basílio", "Bahia", "Centro", "Rua dos Marombas", "713", "Edifício");
+                    // Adiciona o objeto enderecoAcademia no objeto marombas.
+                    Academia marombas = new Academia(enderecoAcademia);
                     
                     System.out.print(marombas.EnderecoCompletoAcademia());
                     System.out.print("\n");
