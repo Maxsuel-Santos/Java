@@ -1,5 +1,5 @@
 public class Academia {
-    protected Endereco endereco;
+    private Endereco endereco;
 
     public Academia(Endereco endereco) {
         this.endereco = endereco;
